@@ -25,7 +25,7 @@ window.onload = () => {
         basemapTiles = leaflet.setBasemapLayers(),
 
 
-        map = leaflet.setMap(pointLongLat, 11, basemapTiles.Stadia_AlidadeSmooth);
+        map = leaflet.setMap(pointLongLat, 11, basemapTiles.osm);
 
     // Start a recursive XMLhttprequest to set all controls and geometries
     leaflet.setAllControls(geoJSON, [marker], basemapTiles, map);
@@ -137,9 +137,10 @@ leaflet.setAllControls = function (objects, preparsedFeatures, tiles, map) {
 leaflet.setBasemapLayers = function () {
     return {
 
-        Stadia_AlidadeSmooth: L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
-            maxZoom: 20,
-            attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+        CartoDB_Positron: L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+	        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	        subdomains: 'abcd',
+	        maxZoom: 19
         }),
 
         osm: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
