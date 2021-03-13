@@ -1,0 +1,25 @@
+/*
+ * Name:   styles.css
+ * Purpose To style the openlayers map project
+ * Author: Nathan Wisla
+ * Date:   March 4, 2021
+ */
+
+.map {
+    height: 700px;
+    width: 100%;
+}
+
+.custom-mouse-position {
+    display: inline-block;
+}
+
+.slider {
+    transition: all 0.5s ease;
+}
+
+.slide-up {
+    overflow-y: hidden;
+    padding:0px;
+    max-height: 0px;
+}
